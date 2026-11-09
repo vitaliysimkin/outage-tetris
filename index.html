@@ -2,14 +2,14 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Тетріс: графік відключень</title>
 <link rel="icon" href="assets/icons/elec-off.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="screen">
-  <h1 id="title">Тетріс: графік відключень</h1>
+  <h1>Тетріс: графік відключень</h1>
 
   <div class="hud">
     <div class="hud-box">
@@ -26,29 +26,32 @@
     </div>
     <div class="hud-box next-box">
       <span class="hud-label">Далі</span>
-      <svg id="next-piece" class="next-piece" viewBox="0 0 40 24"></svg>
+      <canvas id="next-piece" class="next-piece" width="64" height="64"></canvas>
     </div>
   </div>
 
   <div class="board-wrap">
-    <table id="board" class="board"></table>
+    <canvas id="board" class="board"></canvas>
+    <div id="overlay" class="overlay hidden">
+      <p id="overlay-text">Пауза</p>
+      <button id="overlay-btn" class="ctrl-btn wide">Старт</button>
+    </div>
   </div>
 
   <div class="controls">
-    <button id="btn-prev" class="ctrl-btn round" title="Попередня доба">↻</button>
-    <button id="btn-down" class="ctrl-btn" title="Завантажити графік">↓</button>
-    <button id="btn-pause" class="ctrl-btn wide" title="Пауза">⏸</button>
-    <button id="btn-reset" class="ctrl-btn" title="Скинути">↺</button>
-    <button id="btn-next" class="ctrl-btn round" title="Наступна доба">▶</button>
+    <button id="btn-left" class="ctrl-btn round" title="Вліво">◀</button>
+    <button id="btn-rotate" class="ctrl-btn round" title="Обертати">↻</button>
+    <button id="btn-right" class="ctrl-btn round" title="Вправо">▶</button>
+    <button id="btn-down" class="ctrl-btn round" title="Вниз">▼</button>
+    <button id="btn-drop" class="ctrl-btn round" title="Скинути">⤓</button>
   </div>
 
-  <p class="legend">
-    <img src="assets/icons/elec-on.svg" alt="" class="legend-icon"> світло є
-    <img src="assets/icons/elec-off.svg" alt="" class="legend-icon"> світла немає
-  </p>
+  <div class="controls secondary">
+    <button id="btn-pause" class="ctrl-btn wide">⏸ Пауза</button>
+    <button id="btn-reset" class="ctrl-btn wide">↺ Нова гра</button>
+  </div>
 </div>
 
-<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
