@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тетріс: графік відключень</title>
+<link rel="icon" href="assets/icons/elec-off.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="screen">
+  <h1 id="title">Тетріс: графік відключень</h1>
+
+  <div class="hud">
+    <div class="hud-box">
+      <span class="hud-label">Рахунок</span>
+      <span class="hud-value" id="score">0</span>
+    </div>
+    <div class="hud-box">
+      <span class="hud-label">Рядки</span>
+      <span class="hud-value" id="rows">0</span>
+    </div>
+    <div class="hud-box">
+      <span class="hud-label">Рівень</span>
+      <span class="hud-value" id="level">1</span>
+    </div>
+    <div class="hud-box next-box">
+      <span class="hud-label">Далі</span>
+      <svg id="next-piece" class="next-piece" viewBox="0 0 40 24"></svg>
+    </div>
+  </div>
+
+  <div class="board-wrap">
+    <table id="board" class="board"></table>
+  </div>
+
+  <div class="controls">
+    <button id="btn-prev" class="ctrl-btn round" title="Попередня доба">↻</button>
+    <button id="btn-down" class="ctrl-btn" title="Завантажити графік">↓</button>
+    <button id="btn-pause" class="ctrl-btn wide" title="Пауза">⏸</button>
+    <button id="btn-reset" class="ctrl-btn" title="Скинути">↺</button>
+    <button id="btn-next" class="ctrl-btn round" title="Наступна доба">▶</button>
+  </div>
+
+  <p class="legend">
+    <img src="assets/icons/elec-on.svg" alt="" class="legend-icon"> світло є
+    <img src="assets/icons/elec-off.svg" alt="" class="legend-icon"> світла немає
+  </p>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
