@@ -2,56 +2,54 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0e14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <title>Тетріс: графік відключень</title>
-<link rel="icon" href="assets/icons/elec-off.svg">
+<link rel="icon" href="assets/icons/elec-on.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="screen">
-  <h1>Тетріс: графік відключень</h1>
+<div class="app">
+  <header class="top">
+    <h1 id="title">Тетріс: графік відключень</h1>
+    <div class="hud">
+      <div class="hud-box"><span class="hud-label">Рахунок</span><span class="hud-value" id="score">0</span></div>
+      <div class="hud-box"><span class="hud-label">Рядки</span><span class="hud-value" id="lines">0</span></div>
+      <div class="hud-box"><span class="hud-label">Рівень</span><span class="hud-value" id="level">1</span></div>
+      <div class="hud-box"><span class="hud-label">Далі</span><div class="next" id="next"></div></div>
+    </div>
+  </header>
 
-  <div class="hud">
-    <div class="hud-box">
-      <span class="hud-label">Рахунок</span>
-      <span class="hud-value" id="score">0</span>
+  <main class="stage" id="stage">
+    <div class="board" id="board"></div>
+    <div class="overlay" id="overlay">
+      <div class="overlay-card">
+        <p class="overlay-title" id="overlay-title">Тетріс</p>
+        <p class="overlay-text" id="overlay-text"></p>
+        <button class="btn primary" id="overlay-btn" type="button">Грати</button>
+      </div>
     </div>
-    <div class="hud-box">
-      <span class="hud-label">Рядки</span>
-      <span class="hud-value" id="rows">0</span>
-    </div>
-    <div class="hud-box">
-      <span class="hud-label">Рівень</span>
-      <span class="hud-value" id="level">1</span>
-    </div>
-    <div class="hud-box next-box">
-      <span class="hud-label">Далі</span>
-      <canvas id="next-piece" class="next-piece" width="64" height="64"></canvas>
-    </div>
-  </div>
+  </main>
 
-  <div class="board-wrap">
-    <canvas id="board" class="board"></canvas>
-    <div id="overlay" class="overlay hidden">
-      <p id="overlay-text">Пауза</p>
-      <button id="overlay-btn" class="ctrl-btn wide">Старт</button>
+  <footer class="controls">
+    <div class="row">
+      <button class="btn round" data-action="left" type="button" aria-label="Вліво">◀</button>
+      <button class="btn round" data-action="right" type="button" aria-label="Вправо">▶</button>
+      <span class="spacer"></span>
+      <button class="btn round" data-action="down" type="button" aria-label="Вниз">▼</button>
+      <button class="btn round accent" data-action="rotate" type="button" aria-label="Обернути">↻</button>
     </div>
-  </div>
-
-  <div class="controls">
-    <button id="btn-left" class="ctrl-btn round" title="Вліво">◀</button>
-    <button id="btn-rotate" class="ctrl-btn round" title="Обертати">↻</button>
-    <button id="btn-right" class="ctrl-btn round" title="Вправо">▶</button>
-    <button id="btn-down" class="ctrl-btn round" title="Вниз">▼</button>
-    <button id="btn-drop" class="ctrl-btn round" title="Скинути">⤓</button>
-  </div>
-
-  <div class="controls secondary">
-    <button id="btn-pause" class="ctrl-btn wide">⏸ Пауза</button>
-    <button id="btn-reset" class="ctrl-btn wide">↺ Нова гра</button>
-  </div>
+    <div class="row">
+      <button class="btn wide" data-action="drop" type="button" aria-label="Скинути">⤓</button>
+      <button class="btn wide accent" data-action="pause" type="button" aria-label="Пауза" id="pause-btn">❚❚</button>
+      <button class="btn wide" data-action="restart" type="button" aria-label="Нова гра">↺</button>
+    </div>
+  </footer>
 </div>
 
-<script src="app.js"></script>
+<script src="game.js"></script>
+<script src="ui.js"></script>
 </body>
 </html>
